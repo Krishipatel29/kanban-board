@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: system-ui;
+}
+
+:root {
+    --bg-color: #000;
+    --primary-text-color: #f5f5f5;
+    --bg-button-color: #2c2c2c;
+
+    --nav-padding: 15px 30px;
+    --section-padding: 10px 30px;
+
+    --padding-sm: 5px;
+    --padding-md: 10px;
+    --padding-lg: 15px;
+    --padding-xl: 20px;
+
+    --border-radius-md: 8px;
+
+    --bg-task-color: #2c2c2c;
+
+    --delete-color: red;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color)
+}
+
+nav {
+    padding: var(--nav-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: var(--bg-button-color);
+    border: none;
+    outline: none;
+    color: var(--primary-text-color);
+    padding: var(--padding-md) var(--padding-lg);
+    /* TOP/BOTTOM   LEFT/RIGHT */
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+}
+
+.board {
+    flex-grow: 1;
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--padding-xl);
+}
+
+.task-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    border-radius: var(--border-radius-md);
+}
+.task-column.hover-over{
+    border: 1px solid var(--primary-text-color);
+    transform: scale(1.02);
+    transition: all 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    background-color: var(--bg-task-color);
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-md);
+    cursor: grab;
+}
+
+.task button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--border-radius-md);
+    border: none;
+    outline: none;
+
+    color: var(--primary-text-color);
+    background-color: var(--delete-color);
+}
