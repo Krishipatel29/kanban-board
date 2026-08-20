@@ -18,7 +18,7 @@
             </div>
 
             <div class="right">
-                <button>Add New Task</button>
+                <button id="toggle-modal">Add New Task</button>
             </div>
         </nav>
 
@@ -27,7 +27,7 @@
             <!-- 3 sub class in section -->
 
             <!-- 1st -->
-            <div class="task-column">
+            <div class="task-column" id="todo">
                 <div class="heading">
                     <div class="left">
                         <h2>To Do</h2>
@@ -36,17 +36,10 @@
                         <span class="count">0</span>
                     </div>
                 </div>
-
-
-                <div class="task" draggable="true">
-                    <h2>Task One</h2>
-                    <p>Task description for Task One</p>
-                    <button>Delete</button>
-                </div>
             </div>
 
             <!-- 2nd -->
-            <div class="task-column">
+            <div class="task-column" id="progress">
                 <div class="heading">
                     <div class="left">
                         <h2>In Progress</h2>
@@ -58,7 +51,7 @@
             </div>
 
             <!-- 3rd -->
-            <div class="task-column">
+            <div class="task-column" id="done">
                 <div class="heading">
                     <div class="left">
                         <h2>Done</h2>
@@ -68,9 +61,29 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
+        </section>
+
+        <div class="modal" id="modal">
+
+            <div class="bg"></div>
+
+            <div  class="center">
+                <input 
+                        type="text" 
+                        placeholder="Task Title" 
+                        id="task-title-input"
+                > 
+
+                <textarea placeholder="Task Description" id="task-description-input">
+                </textarea>
+
+                <button id="add-task">Add Task</button>
+            </div>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
